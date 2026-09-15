@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap');
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-card-border: hsl(var(--card-border));
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --font-sans: var(--app-font-sans);
+  --font-serif: var(--app-font-serif);
+  --font-mono: var(--app-font-mono);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+:root {
+  --background: 210 33% 97%;
+  --foreground: 213 47% 17%;
+  --border: 210 23% 86%;
+  --input: 210 23% 86%;
+  --ring: 178 42% 43%;
+  --card: 0 0% 100%;
+  --card-foreground: 213 47% 17%;
+  --card-border: 210 23% 86%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 213 47% 17%;
+  --primary: 213 47% 17%;
+  --primary-foreground: 210 33% 97%;
+  --secondary: 178 42% 43%;
+  --secondary-foreground: 0 0% 100%;
+  --muted: 210 24% 92%;
+  --muted-foreground: 213 20% 43%;
+  --accent: 38 57% 57%;
+  --accent-foreground: 213 47% 17%;
+  --destructive: 10 54% 55%;
+  --destructive-foreground: 0 0% 100%;
+  --sidebar: 213 47% 17%;
+  --sidebar-foreground: 210 33% 97%;
+  --sidebar-border: 213 37% 27%;
+  --sidebar-primary: 178 42% 43%;
+  --sidebar-primary-foreground: 0 0% 100%;
+  --sidebar-accent: 213 37% 27%;
+  --sidebar-accent-foreground: 210 33% 97%;
+  --sidebar-ring: 178 42% 43%;
+  --app-font-sans: 'Manrope', sans-serif;
+  --app-font-serif: 'Instrument Serif', Georgia, serif;
+  --app-font-mono: 'DM Mono', monospace;
+  --radius: 0.8rem;
+  --shadow-sm: 0 4px 18px rgba(17, 42, 70, 0.07);
+  --shadow-md: 0 18px 50px rgba(17, 42, 70, 0.11);
+}
+
+.dark {
+  --background: 213 47% 10%;
+  --foreground: 210 33% 97%;
+  --border: 213 28% 23%;
+  --input: 213 28% 23%;
+  --card: 213 40% 14%;
+  --card-foreground: 210 33% 97%;
+  --card-border: 213 28% 23%;
+  --popover: 213 40% 14%;
+  --popover-foreground: 210 33% 97%;
+  --primary: 178 42% 58%;
+  --primary-foreground: 213 47% 10%;
+  --secondary: 213 37% 27%;
+  --secondary-foreground: 210 33% 97%;
+  --muted: 213 32% 19%;
+  --muted-foreground: 210 18% 70%;
+  --accent: 38 57% 57%;
+  --accent-foreground: 213 47% 10%;
+}
+
+@layer base {
+  * { @apply border-border; }
+  html { scroll-behavior: smooth; }
+  body { @apply font-sans antialiased bg-background text-foreground; }
+  ::selection { background: hsl(var(--accent) / .35); }
+}
+
+@layer utilities {
+  .font-display { font-family: var(--app-font-serif); }
+  .font-mono { font-family: var(--app-font-mono); }
+  .text-balance { text-wrap: balance; }
+  .section-shell { width: min(1180px, calc(100% - 40px)); margin-inline: auto; }
+}
+
+.reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s ease; }
+.reveal.is-visible { opacity: 1; transform: translateY(0); }
+.delay-1 { transition-delay: 90ms; }
+.delay-2 { transition-delay: 170ms; }
+.delay-3 { transition-delay: 250ms; }
+
+.topo-lines {
+  background-image: repeating-radial-gradient(ellipse at 15% 0%, transparent 0 21px, rgba(255,255,255,.12) 22px 23px, transparent 24px 48px);
+}
+.paper-grid {
+  background-image: linear-gradient(rgba(17,42,70,.045) 1px, transparent 1px), linear-gradient(90deg, rgba(17,42,70,.045) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+.academic-rule { position: relative; }
+.academic-rule::after { content: ''; display: block; height: 1px; width: 54px; margin-top: 16px; background: hsl(var(--accent)); }
+button, a, input, textarea, select { outline-color: hsl(var(--secondary)); outline-offset: 3px; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+}
