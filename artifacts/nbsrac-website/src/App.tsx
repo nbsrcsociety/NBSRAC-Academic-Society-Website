@@ -43,16 +43,133 @@ const navItems = [
 ];
 
 const objectives = [
-  { number: '01', icon: FlaskConical, title: 'Make regional research visible', text: 'Create a trusted platform for work rooted in North Bengal, from the field to the journal and beyond.' },
-  { number: '02', icon: Users, title: 'Build generous networks', text: 'Connect early-career researchers, established scholars, institutions and practitioners across disciplines.' },
-  { number: '03', icon: Globe2, title: 'Carry local insight outward', text: 'Turn place-based knowledge into meaningful national conversations and international collaborations.' },
+  {
+    number: '01',
+    icon: FlaskConical,
+    title: 'Research & Innovation',
+    text: 'Promote cross-disciplinary research across Science, Technology, Humanities, Social Sciences and Management, with focus areas including AI, Data Science, Environmental Studies and Health Sciences.',
+  },
+  {
+    number: '02',
+    icon: Users,
+    title: 'Academic Collaboration',
+    text: 'Build partnerships among universities, colleges, research institutions and industry in India and abroad through joint projects, academic networks and MoUs.',
+  },
+  {
+    number: '03',
+    icon: CalendarDays,
+    title: 'Academic Events',
+    text: 'Organize and support conferences, seminars, workshops, symposiums, faculty development programmes and training programmes with technical and administrative assistance.',
+  },
+  {
+    number: '04',
+    icon: BookOpen,
+    title: 'Publication & Dissemination',
+    text: 'Facilitate the publication and dissemination of research through journals, conference proceedings, edited volumes, books and technical reports.',
+  },
+  {
+    number: '05',
+    icon: BookOpen,
+    title: 'Researcher & Student Support',
+    text: 'Provide platforms for researchers and students to present and publish their work while supporting mentoring, academic development and research skills.',
+  },
+  {
+    number: '06',
+    icon: MapPin,
+    title: 'Regional Development',
+    text: 'Address academic and research needs specific to North Bengal and encourage research that contributes to the region’s educational, social and economic development.',
+  },
+  {
+    number: '07',
+    icon: MapPin,
+    title: 'Networking',
+    text: 'Connect academicians, researchers, industry professionals and policymakers to encourage knowledge exchange, collaboration and meaningful academic partnerships.',
+  },
+  {
+    number: '08',
+    icon: Building2,
+    title: 'Institutional Support Services',
+    text: 'Provide institutional support for academic events and initiatives, including event organization, certification and official branding or logo support.',
+  },
+  {
+    number: '09',
+    icon: Building2,
+    title: 'Capacity Building',
+    text: 'Strengthen research and teaching capabilities through faculty development programmes, research methodology workshops, training and professional development activities.',
+  },
+  {
+    number: '10',
+    icon: Building2,
+    title: 'Government & Agency Collaboration',
+    text: 'Collaborate with government bodies, funding agencies and educational organizations to support research funding, academic development and alignment with education policies.',
+  },
 ];
 
+const leadership = [
+  {
+    role: 'President',
+    name: 'Dr. Saroj Kr. Biswas',
+  },
+  {
+    role: 'Secretary',
+    name: 'Dr. Rakesh Kumar Mandal',
+  },
+];
 const committee = [
-  { initials: 'AR', name: 'Dr. Ananya Roy', role: 'Founding Convenor', institution: 'University of North Bengal', tone: 'bg-[#d9ebe8]' },
-  { initials: 'SK', name: 'Prof. S. K. Chatterjee', role: 'Academic Secretary', institution: 'Cooch Behar Panchanan Barma University', tone: 'bg-[#f4e6cf]' },
-  { initials: 'MN', name: 'Dr. Meera Nandi', role: 'Outreach & Partnerships', institution: 'Indian Institute of Technology Guwahati', tone: 'bg-[#e8e0ee]' },
-  { initials: 'TA', name: 'Dr. Tenzin Angmo', role: 'Early Career Representative', institution: 'University of Sikkim', tone: 'bg-[#e8e8d7]' },
+  {
+    initials: 'SB',
+    name: 'Dr. Saroj Kr. Biswas',
+    role: 'Associate Professor, CSE',
+    institution: 'NIT Silchar',
+    contact: 'saroj@cse.nits.ac.in',
+    image: '/members/Saroj.jpg',
+    tone: 'bg-[#d9ebe8]',
+  },
+  {
+    initials: 'AD',
+    image: '/members/Saroj.jpg',
+    name: 'Dr. Akhil Kumar Das',
+    role: 'Assistant Professor, CS',
+    institution: 'Gour Mahavidyalaya',
+    contact: 'd.akhil@gourmaha.ac.in',
+    tone: 'bg-[#f4e6cf]',
+  },
+  {
+    initials: 'AM',
+    image: '/members/Saroj.jpg',
+    name: 'Dr. Ardhendu Mandal',
+    role: 'Associate Professor, CST',
+    institution: 'University of North Bengal',
+    contact: 'am.csa.nbu@nbu.ac.in',
+    tone: 'bg-[#e8e0ee]',
+  },
+  {
+    initials: 'AB',
+    image: '/members/Saroj.jpg',
+    name: 'Mr. Arijit Bhattacharya',
+    role: 'Assistant Professor, CS',
+    institution: 'Gour Mahavidyalaya',
+    contact: 'barijit@gourmaha.ac.in',
+    tone: 'bg-[#e8e8d7]',
+  },
+  {
+    initials: 'PS',
+    image: '/members/Saroj.jpg',
+    name: 'Dr. Payel Saha',
+    role: 'Assistant Professor, CS & Application',
+    institution: "North Bengal Snt. Xavier's College",
+    contact: 'payel17.10@gmail.com',
+    tone: 'bg-[#d9ebe8]',
+  },
+  {
+    initials: 'DS',
+    image: '/members/Saroj.jpg',
+    name: 'Mrs. Debasmita Saha',
+    role: 'Assistant Professor, CS',
+    institution: 'University of Gour Banga',
+    contact: 'debasmita_cs@ugb.ac.in',
+    tone: 'bg-[#f4e6cf]',
+  },
 ];
 
 const events = [
@@ -182,25 +299,124 @@ function App() {
         <section id="about" className="section-shell scroll-mt-24 py-24 md:py-32">
           <Reveal className="grid gap-12 lg:grid-cols-[.8fr_1.2fr] lg:gap-24">
             <div><div className="font-mono text-[10px] font-medium uppercase tracking-[.2em] text-[#3e9b9a]">01 / About the society</div><h2 className="academic-rule mt-5 max-w-md font-display text-5xl leading-[.95] tracking-[-.03em] md:text-6xl">A society with a sense of <em>place.</em></h2></div>
-            <div className="max-w-2xl pt-1"><p className="text-xl leading-9 text-[#274663]">North Bengal is often described through its borders, corridors and distances. NBSRAC begins somewhere else: with the people making knowledge here.</p><p className="mt-6 leading-7 text-[#52677f]">We are building an open, interdisciplinary home for research and academic collaboration across North Bengal and the Eastern Himalayan region. Our work connects universities with communities, ideas with practice, and local questions with wider conversations.</p><div className="mt-9 flex items-center gap-4"><div className="h-10 w-10 rounded-full border border-[#d7ac5a] p-2"><div className="h-full w-full rounded-full bg-[#d7ac5a]" /></div><p className="text-sm font-semibold text-[#112a46]">Rooted here. In conversation everywhere.</p></div></div>
+            <div className="max-w-2xl pt-1"><p className="text-xl leading-9 text-[#274663]">Promote Research Excellence, Academic Collaboration, and Knowledge Exchange at regional, national, and international levels, with special focus on strengthening the research and academic ecosystem in North Bengal.</p><p className="mt-6 leading-7 text-[#52677f]">We are building an open, interdisciplinary home for research and academic collaboration across North Bengal and the Eastern Himalayan region. Our work connects universities with communities, ideas with practice, and local questions with wider conversations.</p><div className="mt-9 flex items-center gap-4"><div className="h-10 w-10 rounded-full border border-[#d7ac5a] p-2"><div className="h-full w-full rounded-full bg-[#d7ac5a]" /></div><p className="text-sm font-semibold text-[#112a46]">Rooted here. In conversation everywhere.</p></div></div>
           </Reveal>
         </section>
 
         <section id="objectives" className="scroll-mt-24 border-y border-[#dbe3ea] bg-[#edf3f6] py-24 md:py-28">
           <div className="section-shell">
-            <Reveal className="mb-14 flex flex-col justify-between gap-5 md:flex-row md:items-end"><div><div className="font-mono text-[10px] uppercase tracking-[.2em] text-[#3e9b9a]">02 / What guides us</div><h2 className="mt-4 font-display text-5xl leading-none tracking-[-.03em] md:text-6xl">Purpose, in practice.</h2></div><p className="max-w-xs text-sm leading-6 text-[#52677f]">Our objectives are deliberately practical: make more room for better questions, better company and better public knowledge.</p></Reveal>
+            <Reveal className="mb-14 flex flex-col justify-between gap-5 md:flex-row md:items-end"><div><div className="font-mono text-[10px] uppercase tracking-[.2em] text-[#3e9b9a]">02 / What guides us</div><h2 className="mt-4 font-display text-5xl leading-none tracking-[-.03em] md:text-6xl">Objectives</h2></div><p className="max-w-xs text-sm leading-6 text-[#52677f]">Our objectives are deliberately practical: make more room for better questions, better company and better public knowledge.</p></Reveal>
             <div className="grid border-l border-t border-[#cbd9e2] md:grid-cols-3">
               {objectives.map(({ number, icon: Icon, title, text }, index) => <Reveal key={number} delay={`delay-${index + 1}`} className="border-b border-r border-[#cbd9e2] bg-[#edf3f6] p-7 transition-colors hover:bg-white md:p-9"><div className="flex items-center justify-between"><span className="font-mono text-xs text-[#3e9b9a]">{number}</span><Icon size={22} strokeWidth={1.4} className="text-[#112a46]" /></div><h3 className="mt-14 max-w-[220px] text-xl font-bold leading-7">{title}</h3><p className="mt-4 text-sm leading-6 text-[#52677f]">{text}</p></Reveal>)}
             </div>
           </div>
         </section>
-
         <section id="leadership" className="section-shell scroll-mt-24 py-24 md:py-32">
-          <Reveal className="grid gap-12 lg:grid-cols-[.7fr_1.3fr] lg:gap-24">
-            <div><div className="font-mono text-[10px] uppercase tracking-[.2em] text-[#3e9b9a]">03 / Stewardship</div><h2 className="academic-rule mt-5 font-display text-5xl leading-[.94] tracking-[-.03em] md:text-6xl">People who make space for <em>others.</em></h2><p className="mt-7 max-w-sm text-sm leading-6 text-[#52677f]">Our founding committee is a working group, not a closed circle. Reach out to the role that fits your question.</p></div>
-            <div className="grid gap-x-6 gap-y-10 sm:grid-cols-2">{committee.map((person, index) => <Reveal key={person.name} delay={`delay-${index + 1}`} className="group border-t border-[#dbe3ea] pt-5"><div className={`relative mb-5 grid aspect-[1.25] place-items-center overflow-hidden ${person.tone}`}><span className="font-display text-7xl text-[#112a46]/80">{person.initials}</span><div className="absolute inset-0 bg-gradient-to-t from-[#112a46]/20 to-transparent" /></div><div className="flex items-start justify-between gap-3"><div><h3 className="font-bold">{person.name}</h3><p className="mt-1 text-xs text-[#3e9b9a]">{person.role}</p><p className="mt-3 text-xs leading-5 text-[#52677f]">{person.institution}</p></div><a href={`mailto:${person.initials.toLowerCase()}@nbsrac.org`} aria-label={`Email ${person.name}`} className="grid h-9 w-9 shrink-0 place-items-center rounded-full border border-[#cbd9e2] text-[#112a46] transition-colors hover:border-[#3e9b9a] hover:text-[#3e9b9a]" data-testid={`link-email-${index}`}><Mail size={15} /></a></div></Reveal>)}</div>
+  <Reveal className="grid gap-12 lg:grid-cols-[.7fr_1.3fr] lg:gap-24">
+
+    {/* Left side */}
+    <div>
+      <div className="font-mono text-[10px] uppercase tracking-[.2em] text-[#3e9b9a]">
+        03 / Leadership 
+      </div>
+
+      <h2 className="academic-rule mt-5 font-display text-5xl leading-[.94] tracking-[-.03em] md:text-6xl">
+        Leadership <em> & Members</em>
+      </h2>
+
+      <p className="mt-7 max-w-sm text-sm leading-6 text-[#52677f]">
+        Our leadership and founding committee work together to guide the
+        society, strengthen academic collaboration, and create opportunities
+        for others.
+      </p>
+    </div>
+
+    {/* Right side */}
+    <div>
+
+      {/* President & Secretary */}
+      <div className="mb-14 grid gap-6 sm:grid-cols-2">
+        {leadership.map((person) => (
+          <Reveal
+            key={person.role}
+            className="border-t-2 border-[#112a46] pt-5"
+          >
+            <p className="font-mono text-[10px] uppercase tracking-[.2em] text-[#3e9b9a]">
+              {person.role}
+            </p>
+
+            <h3 className="mt-3 font-display text-3xl tracking-[-.02em] text-[#112a46]">
+              {person.name}
+            </h3>
           </Reveal>
-        </section>
+        ))}
+      </div>
+
+      {/* Founding Committee */}
+      <div className="mb-6">
+        <div className="font-mono text-[10px] uppercase tracking-[.2em] text-[#3e9b9a]">
+          Founding Committee
+        </div>
+      </div>
+
+      <div className="grid gap-x-6 gap-y-10 sm:grid-cols-2">
+        {committee.map((person, index) => (
+          <Reveal
+            key={person.name}
+            delay={`delay-${index + 1}`}
+            className="group border-t border-[#dbe3ea] pt-5"
+          >
+            <div
+              className={`relative mb-5 grid aspect-[1.25] place-items-center overflow-hidden ${person.tone}`}
+            >
+              <img
+  src={person.image}
+  alt={person.name}
+  className="absolute inset-0 h-full w-full object-cover"
+/>
+
+
+
+              <div className="absolute inset-0 bg-gradient-to-t from-[#112a46]/20 to-transparent" />
+            </div>
+
+            <div className="flex items-start justify-between gap-3">
+              <div>
+                <h3 className="font-bold">{person.name}</h3>
+
+                <p className="mt-1 text-xs text-[#3e9b9a]">
+                  {person.role}
+                </p>
+
+                <p className="mt-3 text-xs leading-5 text-[#52677f]">
+                  {person.institution}
+                </p>
+
+                <a
+                  href={`mailto:${person.contact}`}
+                  className="mt-2 block text-xs text-[#3e9b9a] hover:underline"
+                >
+                  {person.contact}
+                </a>
+              </div>
+
+              <a
+                href={`mailto:${person.contact}`}
+                aria-label={`Email ${person.name}`}
+                className="grid h-9 w-9 shrink-0 place-items-center rounded-full border border-[#cbd9e2] text-[#112a46] transition-colors hover:border-[#3e9b9a] hover:text-[#3e9b9a]"
+                data-testid={`link-email-${index}`}
+              >
+                <Mail size={15} />
+              </a>
+            </div>
+          </Reveal>
+        ))}
+      </div>
+
+    </div>
+  </Reveal>
+</section>
+       
 
         <section id="activities" className="scroll-mt-24 bg-[#112a46] py-24 text-[#f7f9fb] md:py-28">
           <div className="section-shell">

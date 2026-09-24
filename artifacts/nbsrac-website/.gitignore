@@ -1,0 +1,7 @@
+node_modules/
+dist/
+.replit-artifact/
+*.tsbuildinfo
+.env
+.env.*
+!.env.example
