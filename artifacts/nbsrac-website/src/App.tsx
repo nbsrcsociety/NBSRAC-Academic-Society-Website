@@ -39,7 +39,7 @@ function Mark({ inverse = false }: { inverse?: boolean }) {
 const navItems = [
   ['About', 'about'], ['Objectives', 'objectives'], ['Leadership', 'leadership'],
   ['Activities', 'activities'], ['Publications', 'publications'], ['Membership', 'membership'],
-  ['Partners', 'partners'], ['FAQ', 'faq'], ['Contact', 'contact'],
+  ['Partners', 'partners'], ['Conference', 'conference'], ['FAQ', 'faq'], ['Contact', 'contact'],
 ];
 
 const objectives = [
@@ -451,16 +451,60 @@ function App() {
           </div>
         </section>
 
+        <section id="conference" className="scroll-mt-24 bg-[#112a46] py-24 text-[#f7f9fb] md:py-28">
+          <div className="section-shell">
+            <Reveal>
+              <div className="font-mono text-[10px] uppercase tracking-[.2em] text-[#8bc7c2]">
+                08 / NBSRAC Conference
+              </div>
+
+              <div className="mt-6 grid gap-10 lg:grid-cols-[1.15fr_.85fr] lg:items-end lg:gap-20">
+                <div>
+                  <h2 className="font-display text-5xl leading-[.94] tracking-[-.03em] md:text-7xl">
+                    Ideas meet<br />
+                    <em>people.</em>
+                  </h2>
+
+                  <p className="mt-7 max-w-2xl text-sm leading-7 text-[#c9d8e3]">
+                    NBSRAC conferences bring researchers, academicians, students,
+                    institutions and practitioners together to share research,
+                    exchange ideas and build meaningful academic collaborations.
+                  </p>
+                </div>
+
+                <div className="border-l-2 border-[#d7ac5a] pl-6">
+                  <p className="text-sm leading-7 text-[#c9d8e3]">
+                    Explore conference announcements, calls for papers,
+                    important dates, registration details and other event
+                    information on our dedicated conference website.
+                  </p>
+
+                  <a
+                    href="https://nbsrac-conference.vercel.app/"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="mt-7 inline-flex items-center gap-2 bg-[#d7ac5a] px-6 py-3 text-sm font-bold text-[#112a46] transition-colors hover:bg-[#e4c27d]"
+                    data-testid="link-conference-website"
+                  >
+                    Visit Conference Website
+                    <ArrowUpRight size={16} />
+                  </a>
+                </div>
+              </div>
+            </Reveal>
+          </div>
+        </section>
+
         <section id="faq" className="scroll-mt-24 bg-[#edf3f6] py-24 md:py-28">
           <div className="section-shell grid gap-12 lg:grid-cols-[.7fr_1.3fr] lg:gap-24">
-            <Reveal><div className="font-mono text-[10px] uppercase tracking-[.2em] text-[#3e9b9a]">08 / The short answer</div><h2 className="mt-5 font-display text-5xl leading-[.94] tracking-[-.03em] md:text-6xl">Questions we<br /><em>hear often.</em></h2></Reveal>
+            <Reveal><div className="font-mono text-[10px] uppercase tracking-[.2em] text-[#3e9b9a]">09 / The short answer</div><h2 className="mt-5 font-display text-5xl leading-[.94] tracking-[-.03em] md:text-6xl">Questions we<br /><em>hear often.</em></h2></Reveal>
             <Reveal delay="delay-2"><div className="border-t border-[#cbd9e2]">{faqs.map(([question, answer], index) => <div key={question} className="border-b border-[#cbd9e2]"><button onClick={() => setOpenFaq(openFaq === index ? -1 : index)} className="flex w-full items-center justify-between gap-5 py-5 text-left text-base font-bold" aria-expanded={openFaq === index} data-testid={`button-faq-${index}`}><span>{question}</span><ChevronDown size={18} className={`shrink-0 text-[#3e9b9a] transition-transform ${openFaq === index ? 'rotate-180' : ''}`} /></button>{openFaq === index && <div className="max-w-2xl pb-6 pr-10 text-sm leading-7 text-[#52677f]" data-testid={`text-faq-answer-${index}`}>{answer}</div>}</div>)}</div></Reveal>
           </div>
         </section>
 
         <section id="contact" className="scroll-mt-24 bg-[#3e9b9a] py-24 text-white md:py-28">
           <div className="section-shell grid gap-12 lg:grid-cols-[.8fr_1.2fr] lg:gap-24">
-            <Reveal><div className="font-mono text-[10px] uppercase tracking-[.2em] text-[#d7f0ed]">09 / Write to us</div><h2 className="mt-5 font-display text-5xl leading-[.94] tracking-[-.03em] md:text-6xl">Good work<br /><em>starts somewhere.</em></h2><p className="mt-7 max-w-sm text-sm leading-7 text-[#d7f0ed]">Tell us what you are working on, what you want to learn, or who you would like to meet. We read every note.</p><div className="mt-10 flex flex-wrap gap-3"><a href="mailto:hello@nbsrac.org" className="flex items-center gap-2 border border-white/40 px-4 py-3 text-sm font-bold transition-colors hover:bg-white hover:text-[#3e9b9a]" data-testid="link-general-email"><Mail size={15} /> hello@nbsrac.org</a><a href="https://www.linkedin.com" target="_blank" rel="noreferrer" className="grid h-11 w-11 place-items-center border border-white/40 transition-colors hover:bg-white hover:text-[#3e9b9a]" aria-label="NBSRAC on LinkedIn" data-testid="link-linkedin"><Linkedin size={16} /></a></div></Reveal>
+            <Reveal><div className="font-mono text-[10px] uppercase tracking-[.2em] text-[#d7f0ed]">10 / Write to us</div><h2 className="mt-5 font-display text-5xl leading-[.94] tracking-[-.03em] md:text-6xl">Good work<br /><em>starts somewhere.</em></h2><p className="mt-7 max-w-sm text-sm leading-7 text-[#d7f0ed]">Tell us what you are working on, what you want to learn, or who you would like to meet. We read every note.</p><div className="mt-10 flex flex-wrap gap-3"><a href="mailto:hello@nbsrac.org" className="flex items-center gap-2 border border-white/40 px-4 py-3 text-sm font-bold transition-colors hover:bg-white hover:text-[#3e9b9a]" data-testid="link-general-email"><Mail size={15} /> hello@nbsrac.org</a><a href="https://www.linkedin.com" target="_blank" rel="noreferrer" className="grid h-11 w-11 place-items-center border border-white/40 transition-colors hover:bg-white hover:text-[#3e9b9a]" aria-label="NBSRAC on LinkedIn" data-testid="link-linkedin"><Linkedin size={16} /></a></div></Reveal>
             <Reveal delay="delay-2"><div className="bg-[#f7f9fb] p-6 text-[#112a46] md:p-9">{contactSent ? <div className="flex min-h-[330px] flex-col items-start justify-center"><div className="grid h-12 w-12 place-items-center rounded-full bg-[#d9ebe8] text-[#3e9b9a]"><Check size={22} /></div><h3 className="mt-6 font-display text-4xl">Message received.</h3><p className="mt-3 max-w-sm text-sm leading-6 text-[#52677f]">Thank you. A member of the NBSRAC team will reply from our shared office shortly.</p><button onClick={() => setContactSent(false)} className="mt-7 text-xs font-bold text-[#3e9b9a] underline underline-offset-4" data-testid="button-contact-reset">Send another message</button></div> : <form onSubmit={submitContact} className="grid gap-5" aria-label="Contact form"><div className="grid gap-5 sm:grid-cols-2"><div><label htmlFor="contact-name" className="mb-2 block text-xs font-bold uppercase tracking-[.08em]">Name</label><input required id="contact-name" className="h-12 w-full border border-[#cbd9e2] bg-white px-3 text-sm focus:border-[#3e9b9a] focus:outline-none" placeholder="Your name" data-testid="input-contact-name" /></div><div><label htmlFor="contact-email" className="mb-2 block text-xs font-bold uppercase tracking-[.08em]">Email</label><input required type="email" id="contact-email" className="h-12 w-full border border-[#cbd9e2] bg-white px-3 text-sm focus:border-[#3e9b9a] focus:outline-none" placeholder="you@email.com" data-testid="input-contact-email" /></div></div><div><label htmlFor="contact-topic" className="mb-2 block text-xs font-bold uppercase tracking-[.08em]">I am writing about</label><select id="contact-topic" className="h-12 w-full border border-[#cbd9e2] bg-white px-3 text-sm focus:border-[#3e9b9a] focus:outline-none" data-testid="select-contact-topic"><option>A research collaboration</option><option>An event or seminar proposal</option><option>A publication idea</option><option>Press or general enquiry</option></select></div><div><label htmlFor="contact-message" className="mb-2 block text-xs font-bold uppercase tracking-[.08em]">Message</label><textarea required id="contact-message" rows={5} className="w-full resize-none border border-[#cbd9e2] bg-white px-3 py-3 text-sm focus:border-[#3e9b9a] focus:outline-none" placeholder="A few words about your idea…" data-testid="textarea-contact-message" /></div><button className="flex h-12 items-center justify-center gap-2 bg-[#112a46] text-sm font-bold text-white transition-colors hover:bg-[#1d4767]" data-testid="button-submit-contact">Send message <Send size={15} /></button></form>}</div></Reveal>
           </div>
         </section>
